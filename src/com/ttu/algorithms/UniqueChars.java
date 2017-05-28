@@ -6,8 +6,8 @@ public class UniqueChars {
 
 	public static void main(String[] args) {
 		UniqueChars arrAndStr = new UniqueChars();
-		// Ask if its a ASCII or UNICODE. here we have coded for ASCII. UNICODE taked more space but logic is same
-		// Ask if whitespace, case of characters need to be considered. here, different cases of same character is different
+		// Check if its a ASCII or UNICODE. here we have coded for ASCII. UNICODE takes more space but logic is same
+		// Check if whitespace, case of characters need to be considered. here, different cases of same character is different
 		
 		//  extended ASCII - 256 characters
 		// ASCII - 128 characters
