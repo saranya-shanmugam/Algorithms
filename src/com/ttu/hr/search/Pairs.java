@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
 
+/**
+ * Find pairs in the given integer list if their difference is as given
+ */
 public class Pairs {
 
 	public static void main(String args[]) {
