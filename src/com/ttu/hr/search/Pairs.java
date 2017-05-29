@@ -3,6 +3,7 @@ package com.ttu.hr.search;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.TreeSet;
 
 public class Pairs {
 
@@ -22,12 +23,39 @@ public class Pairs {
 		scan.close();
 		// System.out.println(Arrays.toString(inputIntArr));
 		
-		Arrays.sort(inputIntArr); // Instead of sorting, TreeSet can be used in the findPairs method instead of HashSet
+		findPairsWithTreeSet(inputIntArr, difference);
+		
+		// Instead of sorting, TreeSet(O(log N) for add/contains) was used in the findPairsWithTreeSet method instead of HashSet in findPairs
+		Arrays.sort(inputIntArr); 
 		findPairs(inputIntArr,difference);
 	}
 
+	/**
+	 * Finds pairs in the given integer list based on the difference provided
+	 * @param inputIntArr
+	 * @param difference
+	 */
 	private static void findPairs(int[] inputIntArr,int difference) {
 		HashSet<Integer> inputSet = new HashSet<>();
+		for (int inputInt : inputIntArr) {
+			inputSet.add(inputInt);
+		}
+		int count = 0;
+		for(int inputInt : inputIntArr) {
+			if(inputSet.contains(inputInt + difference)) {
+				count++;
+			} 
+		}
+		System.out.println(count);
+	}
+	
+	/**
+	 * Finds pairs in the given integer list based on the difference provided
+	 * @param inputIntArr
+	 * @param difference
+	 */
+	private static void findPairsWithTreeSet(int[] inputIntArr,int difference) {
+		TreeSet<Integer> inputSet = new TreeSet<>();
 		for (int inputInt : inputIntArr) {
 			inputSet.add(inputInt);
 		}
