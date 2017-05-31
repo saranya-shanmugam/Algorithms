@@ -93,6 +93,7 @@ public class StringAnagrams {
 	 * count of characters in each string. Increase the count for string one and decrease the count for string two
 	 * thereby the hashmap entries will not have any zeroes for anagrams
 	 * 
+	 * Can be used for ASCII or UNICODE
 	 * @param str1
 	 * @param str2
 	 */
