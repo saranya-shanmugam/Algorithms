@@ -9,7 +9,7 @@ public class URLModify  {
 	}
 
 	/**
-	 * This method replaces space by %20 in-place
+	 * This method replaces space by %20 in-place starting from end to beginning of the String to avoid overwriting of characters
 	 * @param string
 	 * @param length
 	 */

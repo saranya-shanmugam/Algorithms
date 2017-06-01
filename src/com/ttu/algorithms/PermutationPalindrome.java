@@ -13,6 +13,7 @@ public class PermutationPalindrome {
 		PermutationPalindrome permutationPalindrome = new PermutationPalindrome();
 		permutationPalindrome.checkPermutationOfAPalindrome("Tact Coa");
 		permutationPalindrome.checkPermutationOfAPalindromeASCII("Tact/. Coa");
+		permutationPalindrome.checkPermutationOfAPalindromeOnTheGo("Tact oCoa");
 	}
 
 	/**
@@ -93,5 +94,33 @@ public class PermutationPalindrome {
 		}
 		return false;
 	}
+	
+	/**
+	 * Checks the given String if it is a permutation of a palindrome
+	 * Keeps track of a countOdd variable value which is incremented if the count of a particular character is odd
+	 * and decremented if it is even. 
+	 * This method does not use extra operation to check the count after populating the map as above methods.
+	 * @param string
+	 */
+	private void checkPermutationOfAPalindromeOnTheGo(String str) {
+		Character ch;
+		int count, countOdd = 0;
+		int[] charCount = new int[26]; // lowercase a - z 
+		String strLower = str.toLowerCase().replaceAll(" ", "");
+		for(int i = 0; i < strLower.length(); i++) {
+			ch = strLower.charAt(i);
+			if(!isChar(ch)) continue;
+			count = ++charCount[ch - 'a'];
+			if(count % 2 == 1) {
+				countOdd++;
+			} else {
+				countOdd--;
+			}
+		}
+		if(countOdd <= 1) {
+			System.out.println("Permutation of a palindrome is available");
+		} else {
+			System.out.println("No permutation of a palindrome");
+		}
+	}
 }
-
