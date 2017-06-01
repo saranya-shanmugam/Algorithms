@@ -2,6 +2,10 @@ package com.ttu.hr.warmup;
 
 import java.util.Scanner;
 
+/**
+ * Min-Max Sum - Find sum and subtract min and max value to get max and min sum value respective of all values except one 
+ *
+ */
 public class MinMaxSum {
 
 	public static void main(String[] args) {
