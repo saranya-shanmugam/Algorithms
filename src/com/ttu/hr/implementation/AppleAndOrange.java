@@ -3,6 +3,7 @@ package com.ttu.hr.implementation;
 import java.util.Scanner;
 
 //https://www.hackerrank.com/challenges/apple-and-orange
+
 public class AppleAndOrange {
 
 	 public static void main(String[] args) {
