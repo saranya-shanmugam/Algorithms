@@ -27,10 +27,13 @@ public class RotateMatrix90Degree {
 		    System.out.println(Arrays.toString(a));
 		}
 		int temp;
+		// We perform such a swap on each layer, starting from the outermost layer and working our way inwards.
+		// (Alternatively, we could start from the inner layer and work outwards.) 
 		for (int i = 0; i < n / 2; i++) {
 			for (int j = i, k = j; j < ((n - 1) - i); j++) {
 				temp = matrix[j][k];
-				matrix[j][k] = matrix[(n - 1) - k][j];
+				// swap the index in each swap and manipulate one of the indexes based on n. Here, it is row index.
+				matrix[j][k] = matrix[(n - 1) - k][j];  
 				matrix[(n - 1) - k][j] = matrix[(n - 1) - j][(n - 1) - k];
 				matrix[(n - 1) - j][(n - 1) - k] = matrix[k][(n - 1) - j];
 				matrix[k][(n - 1) - j] = temp;
