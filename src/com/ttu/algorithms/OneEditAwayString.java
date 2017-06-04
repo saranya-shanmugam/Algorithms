@@ -10,11 +10,8 @@ public class OneEditAwayString {
 	}
 
 	private void isOneEditAway(String str1, String str2) {
-		if(str1.toLowerCase().equals(str2.toLowerCase())) {
+		if (str1.toLowerCase().equals(str2.toLowerCase())) {
 			System.out.println("Both strings are same");
-			return;
-		} else if(Math.abs(str1.length() - str2.length()) > 1) {
-			System.out.println("Strings are not one edit away");
 			return;
 		}
 		HashMap<Character, Integer> charCount = new HashMap<>();
@@ -23,20 +20,24 @@ public class OneEditAwayString {
 
 		boolean oneCounted = false, negativeCounted = false;
 		for (Entry<Character, Integer> entry : charCount.entrySet()) {
+			if(entry.getValue() == 0) continue;
 			if (entry.getValue() == 1) {
 				if (!oneCounted) {
 					oneCounted = true;
-				} else {
-					System.out.println("Not valid for one edit check");
-					return;
+					continue;
 				}
+				System.out.println("Not valid for one edit check");
+				return;
 			} else if (entry.getValue() == -1) {
 				if (!negativeCounted) {
 					negativeCounted = true;
-				} else {
-					System.out.println("Not valid for one edit check");
-					return;
+					continue;
 				}
+				System.out.println("Not valid for one edit check");
+				return;
+			} else {
+				System.out.println("Not valid for one edit check");
+				return;
 			}
 		}
 		if ((oneCounted && negativeCounted)) {
