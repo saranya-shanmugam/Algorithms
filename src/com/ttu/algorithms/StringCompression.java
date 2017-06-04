@@ -6,8 +6,8 @@ import java.util.LinkedHashMap;
 public class StringCompression {
 	public static void main(String[] args) {
 		StringCompression stringCompression = new StringCompression();
-		stringCompression.getCompressedString("aabcccccaaa"); // output:
-																// a2b1c5a3
+		stringCompression.getCompressedString("aabccccca"); // output: a2b1c5a1
+		stringCompression.getCompressedString("aabcccccaaa"); // output: a2b1c5a3
 		stringCompression.getCompressedString("abcd"); // output: abcd
 	}
 
