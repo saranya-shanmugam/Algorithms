@@ -22,7 +22,7 @@ public class KangarooHopsMeetAtSameTime {
         int distanceDiff = Math.abs(x1-x2);
         int speedDiff = Math.abs(v1-v2);
         
-        if(distanceDiff%speedDiff == 0) {
+        if(distanceDiff % speedDiff == 0) {
         	System.out.println("YES");
         } else {
         	System.out.println("NO");
