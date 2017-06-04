@@ -13,6 +13,9 @@ public class OneEditAwayString {
 		if(str1.toLowerCase().equals(str2.toLowerCase())) {
 			System.out.println("Both strings are same");
 			return;
+		} else if(Math.abs(str1.length() - str2.length()) > 1) {
+			System.out.println("Strings are not one edit away");
+			return;
 		}
 		HashMap<Character, Integer> charCount = new HashMap<>();
 		fillCharMap(charCount, str1, 1);
