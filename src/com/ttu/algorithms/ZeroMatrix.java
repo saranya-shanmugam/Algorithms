@@ -18,7 +18,8 @@ public class ZeroMatrix {
 		zeroMatrix.formZeroMatrix(matrix1);
 		zeroMatrix.formZeroMatrix(matrix);
 	}
-
+	
+	// TODO - doesn't work for 	int[][] matrix = new int[][] { { 0, 2, 3, 4 }, { 0, 2, 3, 4 }, { 1, 2, 0, 4 }, };
 	private void formZeroMatrix(int[][] matrix) {
 		int rowLength = matrix.length;
 		if (rowLength == 0) {
