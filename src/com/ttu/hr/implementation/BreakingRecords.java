@@ -2,6 +2,7 @@ package com.ttu.hr.implementation;
 
 import java.util.Scanner;
 
+//https://www.hackerrank.com/challenges/breaking-best-and-worst-records
 public class BreakingRecords {
 
 	 public static void main(String[] args) {
