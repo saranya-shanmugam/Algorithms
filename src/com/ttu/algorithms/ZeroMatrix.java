@@ -14,12 +14,18 @@ public class ZeroMatrix {
 		ZeroMatrix zeroMatrix = new ZeroMatrix();
 		int[][] matrix1 = new int[][] { { 1, 2, 3, 0, 5, 6 }, { 5, 6, 7, 8, 8, 8 }, { 9, 10, 11, 12, 12, 12 },
 				{ 13, 14, 15, 16, 16, 16 }, { 17, 18, 19, 20, 20, 20 }, { 21, 22, 23, 24, 25, 0 } };
-		int[][] matrix = new int[][] { { 0, 2, 3, 4 }, { 0, 2, 3, 4 }, { 1, 2, 0, 4 }, };
+		int[][] matrix = new int[][] { { 0, 2, 3, 4 }, { 0, 2, 3, 4 }, { 1, 2, 3, 4 }, };
+		// new int[][] { { 0, 2, 3, 4 }, { 1, 0, 3, 4 }, { 1, 2, 0, 4 }};
 		zeroMatrix.formZeroMatrix(matrix1);
 		zeroMatrix.formZeroMatrix(matrix);
 	}
-	
-	// TODO - doesn't work for 	int[][] matrix = new int[][] { { 0, 2, 3, 4 }, { 0, 2, 3, 4 }, { 1, 2, 0, 4 }, };
+
+	/**
+	 * Keep track of the rows and columns in different sets and then make the
+	 * values in the corresponding rows and columns to zero.
+	 * 
+	 * @param matrix
+	 */
 	private void formZeroMatrix(int[][] matrix) {
 		int rowLength = matrix.length;
 		if (rowLength == 0) {
@@ -32,16 +38,18 @@ public class ZeroMatrix {
 		for (int i = 0; i < rowLength; i++) {
 			for (int j = 0; j < colLength; j++) {
 				if (matrix[i][j] == 0) {
-					if (rowSet.contains(i) || colSet.contains(j))
-						continue;
 					rowSet.add(i);
-					makeZerosInRowOrCol(matrix, i, colLength, true);
 					colSet.add(j);
-					makeZerosInRowOrCol(matrix, j, rowLength, false);
 				}
-
 			}
 		}
+		for (Integer i : rowSet) {
+			makeZerosInRowOrCol(matrix, i, colLength, true);
+		}
+		for (Integer j : colSet) {
+			makeZerosInRowOrCol(matrix, j, rowLength, false);
+		}
+
 		System.out.println(Arrays.deepToString(matrix));
 	}
 
