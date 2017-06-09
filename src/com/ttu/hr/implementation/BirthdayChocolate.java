@@ -2,6 +2,7 @@ package com.ttu.hr.implementation;
 
 import java.util.Scanner;
 
+// https://www.hackerrank.com/challenges/the-birthday-bar
 public class BirthdayChocolate {
 
 	public static void main(String[] args) {
