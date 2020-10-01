@@ -15,6 +15,7 @@ public class Sorting {
 
     }
 
+    // https://leetcode.com/problems/sort-array-by-parity
     private void sortArrayByParityInPlace() {
         int[] input = {3,1,2,4};
     }
@@ -33,6 +34,7 @@ public class Sorting {
 
     }
 
+    // https://leetcode.com/problems/squares-of-a-sorted-array
     private void squareOfSortedArray1() {
         int[] input = {-4,-1,0,3,10};
         int N = input.length;
